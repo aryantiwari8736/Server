@@ -21,10 +21,7 @@ app.use(cookieParser());
 // cors => cross origin resource sharing
 
 app.use(cors({
-  origin: 'https://www.springbee.tech', // Adjust this to your desired origin or '*'
-  methods: 'GET,POST,PUT,DELETE', // Adjust this to the allowed HTTP methods
-  allowedHeaders: 'Content-Type,Authorization', // Adjust this to the allowed headers
-  credentials: true // Adjust this based on whether you need to support credentials (cookies, authorization headers)
+  origin: '*', 
 }));
 
 
