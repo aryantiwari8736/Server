@@ -23,8 +23,8 @@ exports.app.use(express_1.default.json({ limit: "50mb" }));
 exports.app.use((0, cookie_parser_1.default)());
 // cors => cross origin resource sharing
 exports.app.use((0, cors_1.default)({
-    origin: ["http://localhost:3000"],
-    credentials: true,
+    origin: 'https://www.springbee.tech',
+    credentials: true
 }));
 // api requests limit
 const limiter = (0, express_rate_limit_1.rateLimit)({
