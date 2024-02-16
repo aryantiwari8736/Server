@@ -19,12 +19,23 @@ app.use(express.json({ limit: "50mb" }));
 app.use(cookieParser());
 
 // cors => cross origin resource sharing
+const corsOpts = {
+  origin: '*',
+
+  methods: [
+    'GET',
+    'POST',
+  ],
+
+  allowedHeaders: [
+    'Content-Type',
+  ],
+};
+
 app.use(
-  cors({
-    origin: ["https://www.springbee.tech/"],
-    credentials: true,
-  })
+  cors(corsOpts)
 );
+
 
 // api requests limit
 const limiter = rateLimit({
