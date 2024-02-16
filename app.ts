@@ -21,10 +21,7 @@ app.use(cookieParser());
 // cors => cross origin resource sharing
 
 app.use(
-  cors({
-    origin: ["https://www.springbee.tech/"],
-    credentials: true,
-  })
+  cors()
 );
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
