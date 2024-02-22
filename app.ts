@@ -20,7 +20,7 @@ app.use(cookieParser());
 
 // cors => cross origin resource sharing
 app.use(cors({
-  origin: 'https://www.springbee.live',
+  origin: ['https://springbee.live','https://www.springbee.tech'],
   credentials: true
 }));
 
