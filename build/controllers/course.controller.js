@@ -42,7 +42,7 @@ exports.editCourse = (0, catchAsyncErrors_1.CatchAsyncError)(async (req, res, ne
         const data = req.body;
         const thumbnail = data.thumbnail;
         const courseId = req.params.id;
-        const courseData = await course_model_1.default.findById(courseId);
+        const courseData = (await course_model_1.default.findById(courseId));
         if (thumbnail && !thumbnail.startsWith("https")) {
             await cloudinary_1.default.v2.uploader.destroy(courseData.thumbnail.public_id);
             const myCloud = await cloudinary_1.default.v2.uploader.upload(thumbnail, {
@@ -336,9 +336,11 @@ exports.generateVideoUrl = (0, catchAsyncErrors_1.CatchAsyncError)(async (req, r
                 Authorization: `Apisecret ${process.env.VDOCIPHER_API_SECRET}`,
             },
         });
+        console.log(res);
         res.json(response.data);
     }
     catch (error) {
+        console.log(error);
         return next(new ErrorHandler_1.default(error.message, 400));
     }
 });
